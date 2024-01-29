@@ -1,0 +1,36 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* 스크롤을 숨깁니다 */
+    height: 100%;
+}
+
+.section {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%; /* 섹션을 화면 오른쪽 바깥으로 초기화합니다 */
+    transition: left 1s ease-in-out; /* 왼쪽으로 이동하는 애니메이션 */
+}
+
+.section1 {
+    background-color: greenyellow;
+    left: 0; /* 첫 번째 섹션은 화면에 표시합니다 */
+}
+
+.section2 {
+    background-color: royalblue;
+}
+
+.section3 {
+    background-color: purple;
+    height: 100vh;
+    overflow: auto;
+}
+
+.section3-1,
+.section3-2 {
+    height: 100vh;
+}
