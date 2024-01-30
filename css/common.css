@@ -1,111 +1,166 @@
 html {
-  font-size: 62.5%;
+    font-size: 62.5%;
 }
 
 :root {
-  --mainbgcolor: #212125;
-  --maincolor: #a3de83;
-  --subcolor: #f7f39a;
-  --engtitlefont: 'Open Sans', sans-serif;
-  --engsubfont: 'Roboto', sans-serif;
+    --mainbgcolor: #212125;
+    --maincolor: #a3de83;
+    --subcolor: #f7f39a;
+    --engtitlefont: 'Open Sans', sans-serif;
+    --engsubfont: 'Roboto', sans-serif;
 }
 body {
-  font-size: 1.6rem;
-  font-family: 'Pretendard-Regular';
+    font-size: 1.6rem;
+    font-family: 'Pretendard-Regular';
+    letter-spacing: 3px;
 }
 
 ::-webkit-scrollbar {
-  width: 0;
+    width: 0;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 .section {
-  height: 100vh;
-  width: 100%;
-  position: absolute;
-  transition: top 0.5s ease, left 0.5s ease;
-  transition-delay: 2ms;
-  background-color: var(--mainbgcolor);
-  color: #fff;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: top 0.5s ease, left 0.5s ease;
+    transition-delay: 2ms;
 }
 
 .section1 {
-  top: 0;
-  left: 0;
-  background-color: rosybrown;
+    background-color: var(--mainbgcolor);
+    color: #fff;
 }
 
 .section2 {
-  top: 0;
-  left: 100%;
-  background-color: #868686;
-  color: #333;
+    left: 100%;
+    background-color: #fff;
 }
 
 .section3 {
-  height: 100vh;
-  overflow: auto;
-  top: 100%;
-  left: 0;
+    height: 100vh;
+    overflow: auto;
+    top: 120%;
+    background-color: var(--mainbgcolor);
+    color: #fff;
+}
+
+.mouse-icon {
+    width: 2px;
+    padding: 4px 12px;
+    height: 32px;
+    border: 2px solid #fcfdfe;
+    border-radius: 12px;
+    opacity: 0.5;
+    box-sizing: content-box;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+}
+
+.mouse-wheel {
+    transform: translateY(-20px);
+    display: inline-block;
+    height: 15px;
+    background-color: #fff;
+    width: 2px;
+    animation: scroll 2s cubic-bezier(0.15, 0.41, 0.69, 0.94) infinite;
+    margin-top: 15px;
+}
+
+@keyframes scroll {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-9px);
+        opacity: 0;
+    }
 }
 
 /* 콘텐츠 시작 */
 
+.section1_inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    text-align: center;
+}
+
+.section1_inner > h2 {
+    line-height: 8rem;
+}
+.section3-1 {
+    height: 115vh;
+}
+
+.section3-2 {
+    height: 100vh;
+}
 .section3-1,
 .section3-2 {
-  height: 100vh;
-  width: 95%;
-  margin: 0 auto;
+    width: 95%;
+    margin: 0 auto;
 }
 
 .section3-2-title {
-  width: 100%;
-  height: 100%;
-  position: relative;
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
 
 /* main btn */
 .left-btn,
 .right-btn {
-  color: inherit;
+    color: inherit;
 }
 .left-btn > span,
 .right-btn > span {
-  display: inline-block;
-  font-size: 2rem;
+    display: inline-block;
+    font-size: 2rem;
 }
 
 .left-btn > span {
-  margin-left: 20px;
+    margin-left: 20px;
 }
 .right-btn > span {
-  margin-right: 20px;
+    margin-right: 20px;
 }
 /* section3-2-1  1depth*/
 
 .section3-2-1_inner {
-  width: 90%;
-  margin: 0 auto;
+    width: 90%;
+    margin: 0 auto;
 }
 .one-depth {
-  padding-top: 25px;
-  margin-bottom: 30px;
+    padding-top: 25px;
+    margin-bottom: 30px;
 }
 
 .one-depth > h2 {
-  font-size: 3.5rem;
-  line-height: 5rem;
+    font-size: 3.5rem;
+    line-height: 5rem;
 }
 .one-depth > h2 > strong {
-  color: var(--maincolor);
-  font-weight: 600;
+    color: var(--maincolor);
+    font-weight: 600;
 }
 
 /* 2depth */
@@ -115,235 +170,235 @@ body {
 .education-career_inner .education-contents > p > b,
 .career-contents > strong,
 .career-contents > p > b {
-  font-family: var(--engsubfont);
+    font-family: var(--engsubfont);
 }
 
 .section3-2-1 .info > strong,
 .education-career_inner .education-contents > strong,
 .career-contents > strong {
-  color: var(--subcolor);
-  font-weight: 600;
-  margin: 20px 0 20px 0;
-  display: inline-block;
+    color: var(--subcolor);
+    font-weight: 600;
+    margin: 20px 0 20px 0;
+    display: inline-block;
 }
 .two-depth {
-  font-size: 2.5rem;
+    font-size: 2.5rem;
 }
 
 .p-tie {
-  line-height: 4rem;
-  text-indent: 2rem;
+    line-height: 4rem;
+    text-indent: 2rem;
 }
 
 /* 3depth */
 .three-depth .skill > strong {
-  color: var(--subcolor);
-  font-weight: 600;
-  margin: 20px 0 20px 0;
-  display: inline-block;
+    color: var(--subcolor);
+    font-weight: 600;
+    margin: 20px 0 20px 0;
+    display: inline-block;
 }
 
 .three-depth .skill {
-  font-size: 2.5rem;
+    font-size: 2.5rem;
 }
 
 .skill_inner {
-  margin-bottom: 20px;
-  opacity: 0;
-  transition: 0.7s ease-in-out;
+    margin-bottom: 20px;
+    opacity: 0;
+    transition: 0.7s ease-in-out;
 }
 .skill_inner.active {
-  opacity: 1;
+    opacity: 1;
 }
 
 .skill_inner > li {
-  display: flex;
-  margin-bottom: 25px;
+    display: flex;
+    margin-bottom: 25px;
 }
 
 .skill_inner > li .skill-text-graph-box > span {
-  display: inline-block;
-  margin-bottom: 10px;
+    display: inline-block;
+    margin-bottom: 10px;
 }
 
 .skill-text-graph-box {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 500px;
-  padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    padding-left: 20px;
 }
 /* skill img size */
 .section3-2-1 .three-depth .skill .skill_inner > li .skill-img-box > img {
-  width: 100%;
-  max-width: 35px;
+    width: 100%;
+    max-width: 35px;
 }
 
 /* skill 스킬그래프 공통 */
 .progress {
-  border: 1px solid #ffffff;
-  padding: 5px;
-  border-radius: 8px;
+    border: 1px solid #ffffff;
+    padding: 5px;
+    border-radius: 8px;
 }
 .progress-level {
-  height: 10px;
-  background: linear-gradient(to right, var(--maincolor), var(--subcolor));
-  border-radius: 8px;
+    height: 10px;
+    background: linear-gradient(to right, var(--maincolor), var(--subcolor));
+    border-radius: 8px;
 }
 
 /* html */
 .progress-level.html {
-  animation: html 2s ease-in-out both;
+    animation: html 2s ease-in-out both;
 }
 
 @keyframes html {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 88%;
-  }
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 88%;
+    }
 }
 
 /* css */
 .progress-level.css {
-  animation: css 2s ease-in-out both;
-  animation-delay: 0.3s;
+    animation: css 2s ease-in-out both;
+    animation-delay: 0.3s;
 }
 @keyframes css {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 88%;
-  }
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 88%;
+    }
 }
 
 /* js_jq */
 .progress-level.js_jq {
-  animation: js_jq 2s ease-in-out both;
-  animation-delay: 0.6s;
+    animation: js_jq 2s ease-in-out both;
+    animation-delay: 0.6s;
 }
 @keyframes js_jq {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 70%;
-  }
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 70%;
+    }
 }
 
 /* ps */
 .progress-level.photoshop {
-  animation: photoshop 2s ease-in-out both;
-  animation-delay: 0.9s;
+    animation: photoshop 2s ease-in-out both;
+    animation-delay: 0.9s;
 }
 
 @keyframes photoshop {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 79%;
-  }
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 79%;
+    }
 }
 
 /* il */
 .progress-level.illustrator {
-  animation: illustrator 2s ease-in-out both;
-  animation-delay: 1.2s;
+    animation: illustrator 2s ease-in-out both;
+    animation-delay: 1.2s;
 }
 @keyframes illustrator {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 79%;
-  }
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 79%;
+    }
 }
 
 /* figma */
 
 .progress-level.figma {
-  animation: figma 2s ease-in-out both;
-  animation-delay: 1.5s;
+    animation: figma 2s ease-in-out both;
+    animation-delay: 1.5s;
 }
 @keyframes figma {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 77%;
-  }
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 77%;
+    }
 }
 
 /* 4depth */
 .fourth-depth {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  height: 40vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 40vh;
 }
 .fourth-depth .portfolio-wire-frame-box {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .fourth-depth > strong,
 .portfolio-wire-frame-box > strong {
-  color: var(--subcolor);
-  font-weight: 600;
-  margin: 20px 0 20px 0;
-  display: inline-block;
-  font-size: 2.5rem;
+    color: var(--subcolor);
+    font-weight: 600;
+    margin: 20px 0 20px 0;
+    display: inline-block;
+    font-size: 2.5rem;
 }
 .etc_inner {
-  display: flex;
-  width: 30%;
-  justify-content: space-between;
-  padding-bottom: 40px;
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+    padding-bottom: 40px;
 }
 
 .etc_inner > li {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  font-size: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 2.4rem;
 }
 
 .etc_inner > li:nth-child(2) > img {
-  margin-bottom: 3px;
+    margin-bottom: 3px;
 }
 
 .etc_inner > li:nth-child(3) > img,
 .etc_inner > li:nth-child(4) > img {
-  margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 /* profile img */
 .profile-img-box .profile-img {
-  width: 100%;
-  max-width: 500px;
-  position: absolute;
-  bottom: 5px;
-  right: 100px;
-  transition: 0.7s ease-in-out;
-  opacity: 0;
+    width: 100%;
+    max-width: 500px;
+    position: absolute;
+    bottom: 5px;
+    right: 100px;
+    transition: 0.7s ease-in-out;
+    opacity: 0;
 }
 .profile-img.active {
-  opacity: 1;
+    opacity: 1;
 }
 
 /* etc img size */
 .section3-2-1 .fourth-depth .etc_inner > li > img {
-  width: 100%;
-  max-width: 50px;
+    width: 100%;
+    max-width: 50px;
 }
 
 .portfolio-wire-frame-box > span {
-  display: inline-block;
-  width: 100%;
-  max-width: 110px;
-  line-height: 35px;
-  margin-right: unset;
+    display: inline-block;
+    width: 100%;
+    max-width: 110px;
+    line-height: 35px;
+    margin-right: unset;
 }
