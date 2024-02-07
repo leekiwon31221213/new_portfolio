@@ -176,18 +176,6 @@ body {
 .section2_inner > h2 {
     display: flex;
 }
-/* .word {
-    margin: 0 5px;
-    animation: slideUp 1s ease forwards;
-    opacity: 0;
-    transform: translateY(70px) scale(7);
-}
-@keyframes slideUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-} */
 
 .word {
     margin: 0 5px;
@@ -195,7 +183,6 @@ body {
     transform: translateY(70px) scale(7);
 }
 
-/* 섹션 2가 활성화됐을 때만 .word 애니메이션 활성화 */
 .section2-active .word {
     animation: section2_text 1s ease forwards;
 }
@@ -209,44 +196,46 @@ body {
 /* section3 */
 .section3-1 {
     height: 115vh;
+    position: relative;
 }
 
 .section3-2 {
+    width: 100%;
     height: 100vh;
     position: relative;
 }
-.section3-2_inner {
-    position: relative;
-}
 
-.section3-2-title {
+/* section3-1 */
+.section3-1::before {
+    content: '';
+    position: absolute;
+    background-image: url(/img/section3-1_bg.svg);
+    background-repeat: no-repeat;
+    background-size: 50% auto;
     width: 100%;
+    background-attachment: fixed;
     height: 100%;
-    position: relative;
+    background-position: center;
+}
+.section3-1-contents {
+    height: 78%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-/* main btn */
-.left-btn,
-.right-btn {
-    color: inherit;
-}
-.left-btn > span,
-.right-btn > span {
-    display: inline-block;
-    font-size: 2rem;
+.section3-1-contents > .traffic-light-text {
+    font-size: 3rem;
+    line-height: 4rem;
+    margin-bottom: 4rem;
 }
 
-.left-btn > span {
-    margin-left: 20px;
-}
-.right-btn > span {
-    margin-right: 20px;
-}
-/* section3-2-1  1depth*/
+/* section3-2 1depth*/
 
-.section3-2-1_inner {
+.section3-2_inner {
     width: 90%;
     margin: 0 auto;
+    position: relative;
 }
 .one-depth {
     padding-top: 25px;
