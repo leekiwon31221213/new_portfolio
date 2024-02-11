@@ -60,3 +60,32 @@ window.addEventListener('wheel', (e) => {
 section3.addEventListener('scroll', () => {
     scrollStart = 0;
 });
+
+/* section3 */
+const section3_1Height = document.querySelector('.section3-1').clientHeight;
+const section3_2_one_depth_Height = document.querySelector('.one-depth').clientHeight;
+const section3_2_two_depth_Height = document.querySelector('.two-depth').clientHeight;
+
+const totalHeight = section3_1Height + section3_2_one_depth_Height + section3_2_two_depth_Height;
+
+// console.log(section3_2_one_depth_Height);
+// console.log(section3_2_one_depth_Height);
+// console.log(section3_2_two_depth_Height);
+
+const skill_box = document.querySelector('.skill_inner');
+const profile_img = document.querySelector('.profile-img');
+
+section3.addEventListener('scroll', function () {
+    if (section3.scrollTop > totalHeight / 2) {
+        skill_box.style.display = 'block';
+        skill_box.classList.add('active');
+
+        profile_img.style.display = 'block';
+        profile_img.classList.add('active');
+    } else {
+        skill_box.style.display = 'none';
+        skill_box.classList.remove('active');
+        profile_img.style.display = 'none';
+        profile_img.classList.remove('active');
+    }
+});
