@@ -91,10 +91,14 @@ section3.addEventListener('scroll', function () {
 });
 
 /* mouse event */
-document.addEventListener('mouseover', function (e) {
-    if (getComputedStyle(e.target).cursor === 'pointer') {
-        document.body.style.cursor = 'url("/img/pointer.svg"),pointer'; // pointer 커서 이미지로 변경
-    } else {
-        document.body.style.cursor = 'url("/img/mouse.svg"),pointer'; // 기본 커서 스타일로 변경
-    }
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('*').forEach(function (e) {
+        //getComputedStyle() 계산된 css 요소를 들고오는 매서드
+        if (getComputedStyle(e).cursor === 'pointer') {
+            e.style.cursor = 'url("/img/pointer.svg"), pointer';
+        } else {
+            e.style.cursor = 'url("/img/mouse.svg"), auto';
+        }
+    });
 });
