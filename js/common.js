@@ -89,3 +89,12 @@ section3.addEventListener('scroll', function () {
         profile_img.classList.remove('active');
     }
 });
+
+/* mouse event */
+document.addEventListener('mouseover', function (e) {
+    if (getComputedStyle(e.target).cursor === 'pointer') {
+        document.body.style.cursor = 'url("/img/pointer.svg"),pointer'; // pointer 커서 이미지로 변경
+    } else {
+        document.body.style.cursor = 'url("/img/mouse.svg"),pointer'; // 기본 커서 스타일로 변경
+    }
+});

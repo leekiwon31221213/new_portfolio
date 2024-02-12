@@ -13,6 +13,7 @@ body {
     font-size: 1.6rem;
     font-family: 'Pretendard-Regular';
     letter-spacing: 3px;
+    cursor: url('/img/mouse.svg'), auto;
 }
 
 ::-webkit-scrollbar {
@@ -540,9 +541,42 @@ body {
 .project-title {
     display: flex;
     flex-direction: column;
+    margin-left: 1rem;
 }
 
+.project-title > h3 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+}
+.project-title > p {
+    font-size: 2rem;
+    color: #ddd;
+    margin-bottom: 3rem;
+    font-weight: 500;
+}
+.hash-tag-box {
+    margin-bottom: 4rem;
+}
 .hash-tag {
     display: flex;
     flex-wrap: wrap;
+}
+.hash-tag > li {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 30px;
+    margin: 10px;
+    color: var(--subcolor);
+    font-size: 2rem;
+}
+
+.project-complete {
+    padding: 10px 24px;
+    background-color: var(--maincolor);
+    color: #333;
+    border-radius: 3rem;
+    font-weight: 600;
+    font-size: 2.5rem;
+    margin-left: 1rem;
 }
