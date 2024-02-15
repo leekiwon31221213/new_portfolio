@@ -635,3 +635,25 @@ body {
   background-image: url(/img/mongze_project2.png);
   transition: background-position 4s;
 }
+
+.publishing-contents-btn-box{
+  width:100%;
+  max-width: 400px;
+}
+
+.publishing_content_btn > span,
+.publishing_content_btn > button > a .device-js-window{
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+  transition: 0.5s;
+  box-sizing: border-box;
+  margin-right: 15px;
+  font-family: var(--engsubfont);
+  cursor: pointer;
+  font-size: 1.7rem;
+}
+
+.publishing_content_btn > button > a .device-js-window:not(.t-m){
+    margin-right:unset;
+}

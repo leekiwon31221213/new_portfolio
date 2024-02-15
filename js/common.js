@@ -93,11 +93,16 @@ section3.addEventListener('scroll', function () {
 /* mouse event */
 
 document.addEventListener('DOMContentLoaded', function () {
-    const a_cursor = document.body.getElementsByTagName('a');
+    const a_elements = document.body.getElementsByTagName('a');
+    const button_elements = document.body.getElementsByTagName('button');
+    const elements = [...a_elements, ...button_elements];
 
-    for (var i = 0; i < a_cursor.length; i++) {
-        if (window.getComputedStyle(a_cursor[i]).cursor === 'pointer') {
-            a_cursor[i].style.cursor = 'url("/img/pointer.svg"), pointer';
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].style.cursor = 'url("/img/pointer.svg"), pointer';
+        const children = elements[i].querySelectorAll('*');
+        for (var j = 0; j < children.length; j++) {
+            children[j].style.cursor = 'url("/img/pointer.svg"), pointer';
         }
     }
 });
+
