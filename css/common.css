@@ -480,7 +480,7 @@ body {
 /* profile img */
 .profile-img-box .profile-img {
   width: 100%;
-  max-width: 500px;
+  max-width: 400px;
   position: absolute;
   bottom: 5px;
   right: 100px;
@@ -588,7 +588,7 @@ body {
   margin-left: 1rem;
 }
 
-.mo-phone-box {
+.mongze-img-box {
   position: relative;
 }
 
@@ -636,13 +636,13 @@ body {
   transition: background-position 4s;
 }
 
-.publishing-contents-btn-box{
-  width:100%;
+.publishing-contents-btn-box {
+  width: 100%;
   max-width: 400px;
 }
 
-.publishing_content_btn > span,
-.publishing_content_btn > button > a .device-js-window{
+.re_btn_pc,
+.publishing_content_btn > a {
   padding: 10px;
   text-align: center;
   border: 1px solid #ddd;
@@ -651,9 +651,50 @@ body {
   margin-right: 15px;
   font-family: var(--engsubfont);
   cursor: pointer;
-  font-size: 1.7rem;
+  font-size: 1.3rem;
+  color: #fff;
 }
 
-.publishing_content_btn > button > a .device-js-window:not(.t-m){
-    margin-right:unset;
+.publishing_content_btn > a:not(.t-m, .re_btn_pc) {
+  margin-right: unset;
+}
+
+/* Project Img Ani */
+.project-img {
+  opacity: 0;
+}
+.project-img.active.dakistore-img {
+  animation: dakisotre 0.7s ease-in-out both;
+}
+
+.project-img.active.remon-app-img {
+  animation: remon_app 0.7s ease-in-out both;
+}
+
+@keyframes dakisotre {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes remon_app {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
 }
