@@ -61,7 +61,8 @@ section3.addEventListener('scroll', () => {
   scrollStart = 0;
 });
 
-/* section3 */
+/* section3 scroll*/
+/* section3-2 */
 const section3_1Height = document.querySelector('.section3-1').clientHeight;
 const section3_2_one_depth_Height = document.querySelector('.one-depth').clientHeight;
 const section3_2_two_depth_Height = document.querySelector('.two-depth').clientHeight;
@@ -88,6 +89,19 @@ section3.addEventListener('scroll', function () {
     profile_img.style.display = 'none';
     profile_img.classList.remove('active');
   }
+});
+
+/* section3-3 */
+$(document).ready(function () {
+  const project_containe = $('.project-container');
+
+  $(section3).on('scroll', function () {
+    if ($(this).scrollTop() > 2700) {
+      project_containe.stop().fadeIn();
+    } else {
+      project_containe.stop().fadeOut();
+    }
+  });
 });
 
 /* cursor style change */
