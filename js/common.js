@@ -94,9 +94,11 @@ section3.addEventListener('scroll', function () {
 /* section3-3 */
 $(document).ready(function () {
   const project_containe = $('.project-container');
+  const section3_2Height = $('.section3-2').height();
+  const totalHeight2 = section3_1Height + section3_2Height;
 
   $(section3).on('scroll', function () {
-    if ($(this).scrollTop() > 2700) {
+    if ($(this).scrollTop() > totalHeight2) {
       project_containe.stop().fadeIn();
     } else {
       project_containe.stop().fadeOut();

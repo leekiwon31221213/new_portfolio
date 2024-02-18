@@ -8,12 +8,30 @@ html {
   --subcolor: #f7f39a;
   --engtitlefont: 'Open Sans', sans-serif;
   --engsubfont: 'Roboto', sans-serif;
+  --main-768px-h-tag: clamp(2.5rem, 3.255vw, 3.5rem);
+
+  /* section2 */
+  --section2-768px-text: clamp(5rem, 6.51vw, 8rem);
+
+  /* section3 */
+  --two-depth-768px-strong: clamp(2rem, 2.083vw, 3rem);
+  --two-depth-768px-ptie: clamp(1.6rem, 2.083vw, 2.5rem);
+
+  @media (max-width: 768px) {
+    --main-768px-h-tag: clamp(2rem, 4.167vw, 2.5rem);
+  }
+
+  @media (max-width: 550px) {
+    --section2-768px-text: clamp(3rem, 5.455vw, 5rem);
+  }
 }
 body {
   cursor: url('/img/mouse.svg'), auto;
   font-size: 1.6rem;
   font-family: 'Pretendard-Regular';
   letter-spacing: 3px;
+  width: 100%;
+  height: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -29,6 +47,12 @@ body {
 }
 
 /* common */
+.wrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
 .section {
   height: 100vh;
   width: 100%;
@@ -42,11 +66,13 @@ body {
 .section1 {
   background-color: var(--mainbgcolor);
   color: #fff;
+  z-index: 3;
 }
 
 .section2 {
   left: 100%;
   background-color: #fff;
+  z-index: 2;
 }
 
 .section3 {
@@ -55,6 +81,7 @@ body {
   top: 120%;
   background-color: var(--mainbgcolor);
   color: #fff;
+  z-index: 1;
 }
 .section3-1,
 .section3-2 {
@@ -108,7 +135,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 5rem;
   text-align: center;
 }
 
@@ -117,7 +143,8 @@ body {
 }
 
 .section1_inner > h1 {
-  line-height: 8rem;
+  font-size: var(--main-768px-h-tag);
+  margin-top: 50px;
 }
 
 .traffic-light-box {
@@ -174,6 +201,10 @@ body {
   display: flex;
   justify-content: center;
 }
+
+.section2_inner {
+  font-size: var(--section2-768px-text);
+}
 .section2_inner > h2 {
   display: flex;
 }
@@ -196,12 +227,14 @@ body {
 }
 /* section3 */
 .section3-1 {
-  height: 115vh;
+  height: 100%;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .section3-2 {
-  height: 220vh;
+  height: fit-content;
   position: relative;
 }
 
@@ -225,8 +258,7 @@ body {
 }
 
 .section3-1-contents > .traffic-light-text {
-  font-size: 2.5rem;
-  line-height: 4rem;
+  font-size: clamp(1.6rem, 2.083vw, 2.5rem);
   margin-bottom: 4rem;
 }
 
@@ -243,8 +275,7 @@ body {
 }
 
 .one-depth > h2 {
-  font-size: 3.5rem;
-  line-height: 5rem;
+  font-size: var(--main-768px-h-tag);
 }
 .one-depth > h2 > strong {
   color: var(--maincolor);
@@ -252,8 +283,9 @@ body {
 }
 
 /* 2depth */
-.section3-2-1 .info > strong,
-.section3-2-1 .info > p > b,
+
+.section3-2 .info > strong,
+.section3-2 .info > p > b,
 .education-career_inner .education-contents > strong,
 .education-career_inner .education-contents > p > b,
 .career-contents > strong,
@@ -261,20 +293,18 @@ body {
   font-family: var(--engsubfont);
 }
 
-.section3-2-1 .info > strong,
+.section3-2 .info > strong,
 .education-career_inner .education-contents > strong,
 .career-contents > strong {
+  font-size: var(--two-depth-768px-strong);
   color: var(--subcolor);
   font-weight: 600;
   margin: 20px 0 20px 0;
   display: inline-block;
 }
-.two-depth {
-  font-size: 2.5rem;
-}
 
 .p-tie {
-  line-height: 4rem;
+  font-size: var(--two-depth-768px-ptie);
   text-indent: 2rem;
 }
 
@@ -287,7 +317,7 @@ body {
 }
 
 .three-depth .skill {
-  font-size: 2.5rem;
+  font-size: var(--two-depth-768px-strong);
 }
 
 .skill_inner {
@@ -452,12 +482,11 @@ body {
   font-weight: 600;
   margin: 20px 0 20px 0;
   display: inline-block;
-  font-size: 2.5rem;
+  font-size: var(--two-depth-768px-strong);
 }
 .etc_inner {
   display: flex;
-  width: 30%;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding-bottom: 40px;
 }
 
@@ -466,7 +495,24 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  font-size: 2.4rem;
+  font-size: var(--two-depth-768px-ptie);
+  text-align: center;
+}
+
+.etc_inner > li:nth-child(2) {
+  margin: 0 40px;
+}
+.etc_inner > li:nth-child(3) {
+  margin-right: 40px;
+}
+
+@media (max-width: 400px) {
+  .etc_inner > li:nth-child(2) {
+    margin: 0 20px;
+  }
+  .etc_inner > li:nth-child(3) {
+    margin-right: 20px;
+  }
 }
 
 .etc_inner > li:nth-child(2) > img {
@@ -501,7 +547,6 @@ body {
   display: inline-block;
   width: 100%;
   max-width: 110px;
-  line-height: 35px;
   margin-right: unset;
 }
 
@@ -514,8 +559,8 @@ body {
 /* section3-3 */
 .section3-3 {
   width: 95%;
-  margin: 0 auto;
-  height: 100vh;
+  margin: 120px auto auto auto;
+  height: 100%;
 }
 
 .project-container {
@@ -557,7 +602,7 @@ body {
 }
 
 .project-title > h3 {
-  font-size: 2.5rem;
+  font-size: var(--main-768px-h-tag);
   font-weight: 600;
   margin-bottom: 3rem;
 }
