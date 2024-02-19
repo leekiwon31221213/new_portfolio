@@ -1,65 +1,135 @@
-let currentSection = 0;
-const sections = document.querySelectorAll('.section');
+// let currentSection = 0;
+// const sections = document.querySelectorAll('.section');
+// const section3 = document.querySelector('.section3');
+// let scrollStart = 0;
+// let isTransitioning = false;
+
+// const changeSection = (next) => {
+//   if (next >= 0 && next < sections.length && !isTransitioning) {
+//     isTransitioning = true;
+
+//     sections.forEach((section, index) => {
+//       section.style.left = index > next ? '100%' : '-100%';
+//       section.style.top = '0';
+
+//       // 모든 섹션에서 active-section 클래스 제거
+//       section.classList.remove('section2-active');
+//     });
+
+//     sections[next].style.left = '0';
+//     sections[next].style.top = '0';
+
+//     // 섹션 2가 활성화될 때만 active-section 클래스 추가
+//     if (next === 1) {
+//       sections[next].classList.add('section2-active');
+//     }
+
+//     currentSection = next;
+
+//     setTimeout(() => {
+//       isTransitioning = false;
+//     }, 500);
+//   }
+
+//   document.body.style.overflow = currentSection === 2 ? 'auto' : 'hidden';
+// };
+
+// window.addEventListener('wheel', (e) => {
+//   if (isTransitioning) return;
+
+//   if (currentSection < 2) {
+//     if (e.deltaY > 0 && currentSection < sections.length - 1) {
+//       changeSection(currentSection + 1);
+//     } else if (e.deltaY < 0 && currentSection > 0) {
+//       changeSection(currentSection - 1);
+//     }
+//   } else if (currentSection === 2) {
+//     const isScrolledToTop = section3.scrollTop === 0;
+//     if (e.deltaY < 0 && isScrolledToTop) {
+//       if (scrollStart === 0) {
+//         scrollStart = e.timeStamp;
+//       } else if (e.timeStamp - scrollStart < 500) {
+//         changeSection(currentSection - 1);
+//       } else {
+//         scrollStart = 0;
+//       }
+//     }
+//   }
+// });
+
+// section3.addEventListener('scroll', () => {
+//   scrollStart = 0;
+// });
+
+/* 테스트중 */
+
 const section3 = document.querySelector('.section3');
-let scrollStart = 0;
-let isTransitioning = false;
+if (window.innerWidth >= 1400) {
+  let currentSection = 0;
+  const sections = document.querySelectorAll('.section');
 
-const changeSection = (next) => {
-  if (next >= 0 && next < sections.length && !isTransitioning) {
-    isTransitioning = true;
+  let scrollStart = 0;
+  let isTransitioning = false;
 
-    sections.forEach((section, index) => {
-      section.style.left = index > next ? '100%' : '-100%';
-      section.style.top = '0';
+  const changeSection = (next) => {
+    if (next >= 0 && next < sections.length && !isTransitioning) {
+      isTransitioning = true;
 
-      // 모든 섹션에서 active-section 클래스 제거
-      section.classList.remove('section2-active');
-    });
+      sections.forEach((section, index) => {
+        section.style.left = index > next ? '100%' : '-100%';
+        section.style.top = '0';
 
-    sections[next].style.left = '0';
-    sections[next].style.top = '0';
+        // 모든 섹션에서 active-section 클래스 제거
+        section.classList.remove('section2-active');
+      });
 
-    // 섹션 2가 활성화될 때만 active-section 클래스 추가
-    if (next === 1) {
-      sections[next].classList.add('section2-active');
+      sections[next].style.left = '0';
+      sections[next].style.top = '0';
+
+      // 섹션 2가 활성화될 때만 active-section 클래스 추가
+      if (next === 1) {
+        sections[next].classList.add('section2-active');
+      }
+
+      currentSection = next;
+
+      setTimeout(() => {
+        isTransitioning = false;
+      }, 500);
     }
 
-    currentSection = next;
+    document.body.style.overflow = currentSection === 2 ? 'auto' : 'hidden';
+  };
 
-    setTimeout(() => {
-      isTransitioning = false;
-    }, 500);
-  }
+  window.addEventListener('wheel', (e) => {
+    if (isTransitioning) return;
 
-  document.body.style.overflow = currentSection === 2 ? 'auto' : 'hidden';
-};
-
-window.addEventListener('wheel', (e) => {
-  if (isTransitioning) return;
-
-  if (currentSection < 2) {
-    if (e.deltaY > 0 && currentSection < sections.length - 1) {
-      changeSection(currentSection + 1);
-    } else if (e.deltaY < 0 && currentSection > 0) {
-      changeSection(currentSection - 1);
-    }
-  } else if (currentSection === 2) {
-    const isScrolledToTop = section3.scrollTop === 0;
-    if (e.deltaY < 0 && isScrolledToTop) {
-      if (scrollStart === 0) {
-        scrollStart = e.timeStamp;
-      } else if (e.timeStamp - scrollStart < 500) {
+    if (currentSection < 2) {
+      if (e.deltaY > 0 && currentSection < sections.length - 1) {
+        changeSection(currentSection + 1);
+      } else if (e.deltaY < 0 && currentSection > 0) {
         changeSection(currentSection - 1);
-      } else {
-        scrollStart = 0;
+      }
+    } else if (currentSection === 2) {
+      const isScrolledToTop = section3.scrollTop === 0;
+      if (e.deltaY < 0 && isScrolledToTop) {
+        if (scrollStart === 0) {
+          scrollStart = e.timeStamp;
+        } else if (e.timeStamp - scrollStart < 500) {
+          changeSection(currentSection - 1);
+        } else {
+          scrollStart = 0;
+        }
       }
     }
-  }
-});
+  });
 
-section3.addEventListener('scroll', () => {
-  scrollStart = 0;
-});
+  section3.addEventListener('scroll', () => {
+    scrollStart = 0;
+  });
+}
+
+/*  */
 
 /* section3 scroll*/
 /* section3-2 */
@@ -80,14 +150,16 @@ section3.addEventListener('scroll', function () {
   if (section3.scrollTop > totalHeight / 2) {
     skill_box.style.display = 'block';
     skill_box.classList.add('active');
-
+  }
+  if (window.innerWidth >= 1025) {
     profile_img.style.display = 'block';
     profile_img.classList.add('active');
+  } else if (window.innerWidth <= 1025) {
+    profile_img.style.display = 'none';
+    profile_img.classList.remove('active');
   } else {
     skill_box.style.display = 'none';
     skill_box.classList.remove('active');
-    profile_img.style.display = 'none';
-    profile_img.classList.remove('active');
   }
 });
 
@@ -99,9 +171,9 @@ $(document).ready(function () {
 
   $(section3).on('scroll', function () {
     if ($(this).scrollTop() > totalHeight2) {
-      project_containe.stop().fadeIn();
+      project_containe.css('display', 'block');
     } else {
-      project_containe.stop().fadeOut();
+      project_containe.css('display', 'none');
     }
   });
 });
