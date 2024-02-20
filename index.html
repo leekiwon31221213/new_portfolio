@@ -23,7 +23,7 @@
         <div class="section1_inner">
           <div class="traffic-light-box">
             <span class="border outline"></span>
-            <span class="border inline"></span>
+
             <ul class="traffic-light">
               <li class="shape circle">
                 <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
@@ -61,7 +61,7 @@
                 </svg>
               </li>
               <li class="shape cloud">
-                <svg xmlns="http://www.w3.org/2000/svg" width="248" height="163" fill="none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="248" height="163" viewBox="0 0 248 163" fill="none">
                   <defs>
                     <linearGradient id="customGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                       <stop offset="0%" stop-color="#f7f39a" />
@@ -148,11 +148,11 @@
 
       <div class="section section2">
         <div class="section2_inner">
-          <!-- <h2>
+          <h2>
             <span class="word why" style="animation-delay: 0s">왜?</span>
             <span class="word traffic-light" style="animation-delay: 0.5s">신호등</span>
             <span class="word" style="animation-delay: 1s">일까요?</span>
-          </h2> -->
+          </h2>
         </div>
         <div class="mouse-icon">
           <span class="mouse-wheel"></span>
@@ -174,20 +174,26 @@
 
             <div class="section3-1-contents">
               <p class="traffic-light-text">
-                신호등을 다른 도형으로 표현 해 틀에 얽매이지 않겠는걸 <br />표현 흰색 도형에서 색이 입혀지는 애니메이션을 구현 신호등이 교통 흐름을
-                원활하게 하고 <br />사고를 예방하는 것처럼 웹사이트의 흐름을 개선하여 사용자 경험을 향상시키고, <br />브랜드의 명확한 메시지 의미를
-                전달
+                신호등을 다른 도형으로 표현 해 틀에 얽매이지 않겠는걸 표현 <br />
+                흰색 도형에서 색이 입혀지는 애니메이션을 구현 신호등이 교통 흐름을 원활하게 하고 <br />사고를 예방하는 것처럼 웹사이트의 흐름을
+                개선하여 사용자 경험을 향상시키고, <br />브랜드의 명확한 메시지 의미를 전달
               </p>
 
-              <ol class="traffic-light-text">
-                <li>빨간색 -'정지'를 의미 웹사이트에서 잠재적인 문제를 정지시켜 사용자가 불편함 없이 웹사이트를 이용할 수 있도록 한다는 것을 상징</li>
-
-                <li>노란색 -'주의'를 의미 브랜드의 가치를 주의 깊게 분석하고 강화하는 과정</li>
-
-                <li>
-                  초록색 -'진행'을 의미 제공하는 서비스를 통해 웹사이트 방문자들이 원활하게 정보를 얻고, 웹사이트를 통한 경험을 즐길 수 있음을 의미
-                </li>
-              </ol>
+              <div class="traffic-light-meaning">
+                <strong>신호등의 의미 &#61; &#123;</strong>
+                <ol class="p-tie">
+                  <li>
+                    &#34;<b>빨간색</b>&#34;&#58; '${정지}를 의미 웹사이트에서 잠재적인 문제를 정지시켜 사용자가 불편함 없이 웹사이트를 이용할 수
+                    있도록 한다는 것을 상징',
+                  </li>
+                  <li>&#34;<b>노란색</b>&#34;&#58; '${주의}를 의미 브랜드의 가치를 주의 깊게 분석하고 강화하는 과정',</li>
+                  <li>
+                    &#34;<b>초록색</b>&#34;&#58; '${진행}을 의미 제공하는 서비스를 통해 웹사이트 방문자들이 원활하게 정보를 얻고, 웹사이트를 통한
+                    경험을 즐길 수 있음을 의미';
+                  </li>
+                </ol>
+                <strong>&#125;&#59;</strong>
+              </div>
             </div>
           </section>
 
@@ -370,13 +376,21 @@
                 </ul>
 
                 <div class="portfolio-wire-frame-box">
-                  <strong>Portfolio Wire Frame</strong>
+                  <strong>Portfolio Wire Frame & Git Hub</strong>
 
-                  <a
-                    href="https://www.figma.com/file/DRUbi67OyrFeJqTzg145Rd/%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4-%EC%83%88%EB%A1%9C?type=design&node-id=190%3A2&mode=design&t=n8dRz3yjuIe6ayea-1"
-                    target="_blank"
-                    >Go To Site</a
-                  >
+                  <div class="btn-box-3-2">
+                    <a
+                      href="https://www.figma.com/file/DRUbi67OyrFeJqTzg145Rd/%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4-%EC%83%88%EB%A1%9C?type=design&node-id=190%3A2&mode=design&t=n8dRz3yjuIe6ayea-1"
+                      target="_blank"
+                      >Wire Frame Go To Site</a
+                    >
+  
+                    <a
+                      href=https://github.com/leekiwon31221213
+                      target="_blank"
+                      >Git Hub Go To Site</a
+                    >
+                  </div>
                 </div>
               </div>
               <div class="profile-img-box">
@@ -750,8 +764,8 @@
                           <li class="publishing_content_btn">
                             <a
                               href="#none"
-                              onclick="MM_openBrWindow('http://cute01235.dothome.co.kr/site3/index.html','win','scrollbars=no,width=1400px,height=940px,top=100px,left=100px')"
-                              class="device-js-window"
+                              onclick="MM_openBrWindow('http://cute0233.dothome.co.kr/','win','scrollbars=no,width=420px,height=800px,top=100px,left=100px')"
+                              class="device-js-window t-m" 
                               >Mobile View</a
                             >
 
@@ -796,7 +810,7 @@
                           </ul>
                         </div>
 
-                        <a href="https://dakistore.co.kr/" target="_blank" class="project-complete">작업물 보러가기</a>
+                        <a href="http://cute0235.dothome.co.kr/" target="_blank" class="project-complete">작업물 보러가기</a>
                       </div>
 
                       <div class="mock-up-box">
@@ -862,7 +876,7 @@
                           </ul>
                         </div>
 
-                        <a href="https://dakistore.co.kr/" target="_blank" class="project-complete">작업물 보러가기</a>
+                        <a href="http://cute01235.dothome.co.kr/site1/dessert39.html" target="_blank" class="project-complete">작업물 보러가기</a>
                       </div>
 
                       <div class="mock-up-box">
@@ -894,7 +908,7 @@
                           </ul>
                         </div>
 
-                        <a href="http://cute01235.dothome.co.kr/site1/dessert39.html" target="_blank" class="project-complete">작업물 보러가기</a>
+                        <a href="http://cute01235.dothome.co.kr/site2/krispy_kreme_doughnuts.html" target="_blank" class="project-complete">작업물 보러가기</a>
                       </div>
 
                       <div class="mock-up-box">

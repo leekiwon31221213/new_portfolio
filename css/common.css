@@ -8,7 +8,13 @@ html {
   --subcolor: #f7f39a;
   --engtitlefont: 'Open Sans', sans-serif;
   --engsubfont: 'Roboto', sans-serif;
+  /* h태그 */
   --main-768px-h-tag: clamp(2.5rem, 3.255vw, 3.5rem);
+
+  --wrap-width: clamp(360px, 100vw, 1920px);
+
+  /* section1 */
+  --section1-svg-img: clamp(150px, 26.042vw, 200px);
 
   /* section2 */
   --section2-768px-text: clamp(5rem, 6.51vw, 8rem);
@@ -26,6 +32,11 @@ html {
 
   @media (max-width: 550px) {
     --section2-768px-text: clamp(3rem, 5.455vw, 5rem);
+    --section1-svg-img: clamp(95px, 26.389vw, 150px);
+  }
+
+  @media (max-width: 400px) {
+    --main-768px-h-tag: clamp(1.7rem, 4.722vw, 2rem);
   }
 }
 body {
@@ -173,13 +184,7 @@ h4 {
   width: 100%;
   height: 100%;
 }
-.inline {
-  position: absolute;
-  width: 95%;
-  height: 89%;
-  top: 20px;
-  left: 29px;
-}
+
 .traffic-light {
   display: flex;
   justify-content: space-around;
@@ -191,9 +196,13 @@ h4 {
   bottom: 60px;
   display: flex;
   width: 90%;
-
   justify-content: space-around;
 }
+
+.shape > svg {
+  width: var(--section1-svg-img);
+}
+
 .traffic-light > .circle {
   /* left: 150px; */
   display: flex;
@@ -228,6 +237,7 @@ h4 {
   margin: 0 5px;
   opacity: 0;
   transform: translateY(70px) scale(7);
+  overflow: hidden;
 }
 
 .section2-active .word {
@@ -270,6 +280,7 @@ h4 {
   background-attachment: fixed;
   height: 100%;
   background-position: center;
+  z-index: -1;
 }
 .section3-1-contents {
   height: 78%;
@@ -309,6 +320,7 @@ h4 {
   font-family: var(--engsubfont);
 }
 
+.section3-1 .section3-1-contents .traffic-light-meaning > strong,
 .section3-2 .info > strong,
 .education-career_inner .education-contents > strong,
 .career-contents > strong {
@@ -492,6 +504,10 @@ h4 {
   flex-direction: column;
 }
 
+.btn-box-3-2 {
+  display: flex;
+}
+
 .fourth-depth > strong,
 .portfolio-wire-frame-box > strong {
   color: var(--subcolor);
@@ -559,10 +575,10 @@ h4 {
   max-width: 50px;
 }
 
-.portfolio-wire-frame-box > span {
+.portfolio-wire-frame-box .btn-box-3-2 > a {
   display: inline-block;
   width: 100%;
-  max-width: 110px;
+  max-width: 130px;
   margin-right: unset;
 }
 
@@ -698,6 +714,7 @@ h4 {
   display: flex;
 }
 
+.portfolio-wire-frame-box .btn-box-3-2 > a,
 .re_btn_pc,
 .publishing_content_btn > a {
   padding: 10px;
@@ -967,6 +984,10 @@ h4 {
   .section3-contents_inner {
     width: 100%;
     margin: unset;
+  }
+
+  .section3-1::before {
+    background-attachment: unset;
   }
 
   .section3-2,
