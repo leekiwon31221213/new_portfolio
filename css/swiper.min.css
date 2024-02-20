@@ -193,12 +193,14 @@
   -o-transform-origin: right top;
   transform-origin: right top;
 }
+
 .swiper-container-horizontal > .swiper-pagination-progress {
   width: 70%;
   height: 4px;
   left: 13%;
-  bottom: 13%;
+  bottom: 10%;
 }
+
 .swiper-container-vertical > .swiper-pagination-progress {
   width: 4px;
   height: 100%;
