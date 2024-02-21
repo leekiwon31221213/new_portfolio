@@ -74,6 +74,9 @@ h4 {
   font-size: var(--main-768px-h-tag);
 }
 
+.section-wrap {
+  position: relative;
+}
 .section {
   height: 100vh;
   width: 100%;
@@ -236,18 +239,30 @@ h4 {
 .word {
   margin: 0 5px;
   opacity: 0;
-  transform: translateY(70px) scale(7);
   overflow: hidden;
 }
+.section2-active .word.why {
+  animation-delay: 0s;
+}
+.section2-active .word.traffic-light {
+  animation-delay: 0.5s;
+}
 
+.section2-active .word.ask-again {
+  animation-delay: 1s;
+}
 .section2-active .word {
   animation: section2_text 1s ease forwards;
 }
 
 @keyframes section2_text {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
   }
 }
 /* section3 */
@@ -978,9 +993,7 @@ h4 {
   .section {
     position: unset;
   }
-  .section3 {
-    overflow: unset;
-  }
+
   .section3-contents_inner {
     width: 100%;
     margin: unset;
@@ -1005,7 +1018,7 @@ h4 {
 
   .section3-3 {
     margin: unset;
-    height: fit-content;
+    height: 100vh;
   }
   .project-container__inner {
     width: auto;
