@@ -245,9 +245,12 @@ h4 {
   margin: 0 5px;
   opacity: 0;
   overflow: hidden;
+  font-size: var(--section2-text);
+  font-weight: 600;
 }
 .section2-active .word.why {
   animation-delay: 0s;
+  color: var(--maincolor);
 }
 .section2-active .word.traffic-light {
   animation-delay: 0.5s;
@@ -370,16 +373,21 @@ h4 {
 
 .skill_inner {
   margin-bottom: 20px;
-  opacity: 0;
-  transition: 0.5s ease-in-out;
-}
-.skill_inner.active {
-  opacity: 1;
 }
 
 .skill_inner > li {
   display: flex;
   margin-bottom: 25px;
+}
+
+.skill-contents {
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+}
+.skill-contents.active {
+  opacity: 1;
+  visibility: visible;
 }
 
 .skill_inner > li .skill-text-graph-box > span {
@@ -413,7 +421,7 @@ h4 {
 }
 
 /* html */
-.progress-level.html {
+.skill-contents.active .progress-level.html {
   animation: html 2s ease-in-out both;
 }
 
@@ -427,21 +435,23 @@ h4 {
 }
 
 /* css */
-.progress-level.css {
+.skill-contents.active .progress-level.css {
   animation: css 2s ease-in-out both;
   animation-delay: 0.3s;
 }
 @keyframes css {
   0% {
     width: 0;
+    visibility: visible;
   }
   100% {
     width: 88%;
+    visibility: visible;
   }
 }
 
 /* js_jq */
-.progress-level.js_jq {
+.skill-contents.active .progress-level.js_jq {
   animation: js_jq 2s ease-in-out both;
   animation-delay: 0.6s;
 }
@@ -455,7 +465,7 @@ h4 {
 }
 
 /* php */
-.progress-level.php {
+.skill-contents.active .progress-level.php {
   animation: php 2s ease-in-out both;
   animation-delay: 0.6s;
 }
@@ -469,7 +479,7 @@ h4 {
 }
 
 /* ps */
-.progress-level.photoshop {
+.skill-contents.active .progress-level.photoshop {
   animation: photoshop 2s ease-in-out both;
   animation-delay: 0.9s;
 }
@@ -484,7 +494,7 @@ h4 {
 }
 
 /* il */
-.progress-level.illustrator {
+.skill-contents.active .progress-level.illustrator {
   animation: illustrator 2s ease-in-out both;
   animation-delay: 1.2s;
 }
@@ -499,7 +509,7 @@ h4 {
 
 /* figma */
 
-.progress-level.figma {
+.skill-contents.active .progress-level.figma {
   animation: figma 2s ease-in-out both;
   animation-delay: 1.5s;
 }
@@ -667,9 +677,6 @@ h4 {
   display: flex;
 }
 .hash-tag > li {
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 30px;
   margin: 10px;
   color: var(--subcolor);
   font-size: var(--project-p-hasTage-text);
@@ -698,26 +705,26 @@ h4 {
   max-width: 100%;
   border-radius: 5px;
   background-size: 100%;
-  width: 150px;
+  width: 130px;
   background-repeat: no-repeat;
   position: absolute;
 }
 
 .mongze-page1-img {
   top: 10.5%;
-  left: 56.5%;
+  left: 57%;
   height: 69%;
   background-size: cover;
   background-position: center;
 }
 
 .mongze-page2-img {
-  left: 6.5%;
+  left: 7%;
 }
 
 .mongze-page2-img {
-  top: 16%;
-  height: 283px;
+  top: 15%;
+  height: 251px;
 }
 
 .mongze-page1-img {
@@ -1069,9 +1076,7 @@ h4 {
     margin: auto auto 10px auto;
   }
   .hash-tag > li {
-    padding: unset;
     margin: unset;
-    border: unset;
   }
   .hash-tag .mr {
     margin-right: 20px;
@@ -1079,7 +1084,6 @@ h4 {
 
   .publishing-contents-btn-box {
     margin-left: unset;
-    justify-content: center;
   }
   .mock-up-box {
     text-align: center;
@@ -1087,6 +1091,13 @@ h4 {
 
   .hash-tag-box {
     width: 100%;
+  }
+  .mongze-page1-img {
+    left: 200px;
+  }
+
+  .mongze-page2-img {
+    left: 24px;
   }
 }
 

@@ -144,21 +144,22 @@ $(document).ready(function () {
   /* section3-2 */
   const section3_1Height = $('.section3-1').height();
 
-  const skill_box = $('.skill_inner');
+  const skill_box = $('.skill-contents');
   const profile_img = $('.profile-img');
 
   section3.on('scroll', function () {
     if ($(this).scrollTop() > ($(this).prop('scrollHeight') - $(this).height()) / 2) {
-      skill_box.css('display', 'block').addClass('active');
+      skill_box.css('visibility', 'visible').addClass('active');
       if ($(window).width() >= 1025) {
         profile_img.css('display', 'block').addClass('active');
       } else {
         profile_img.css('display', 'none').removeClass('active');
       }
     } else {
-      skill_box.css('display', 'none').removeClass('active');
+      skill_box.css('visibility', 'hidden').removeClass('active');
       profile_img.css('display', 'none').removeClass('active');
     }
+    // console.log($(this).scrollTop() > ($(this).prop('scrollHeight') - $(this).height()) / 2)
   });
 
   /* section3-3 */
