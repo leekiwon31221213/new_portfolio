@@ -150,24 +150,16 @@ $(document).ready(function () {
   section3.on('scroll', function () {
     if ($(this).scrollTop() > ($(this).prop('scrollHeight') - $(this).height()) / 2) {
       skill_box.css('display', 'block').addClass('active');
-      profile_img.css('display', 'block').addClass('active');
+      if ($(window).width() >= 1025) {
+        profile_img.css('display', 'block').addClass('active');
+      } else {
+        profile_img.css('display', 'none').removeClass('active');
+      }
     } else {
       skill_box.css('display', 'none').removeClass('active');
       profile_img.css('display', 'none').removeClass('active');
     }
   });
-
-  // 창의 너비에 따라 프로필 이미지를 표시하거나 숨깁니다.
-  function profile_img_handle() {
-    if ($(window).width() >= 1025) {
-      profile_img.css('display', 'block').addClass('active');
-    } else if ($(window).width() <= 1025) {
-      profile_img.css('display', 'none').removeClass('active');
-    }
-  }
-
-  $(window).on('resize', profile_img_handle);
-  profile_img_handle();
 
   /* section3-3 */
   const project_containe = $('.project-container');
