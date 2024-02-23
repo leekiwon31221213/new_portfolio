@@ -359,6 +359,15 @@ h4 {
   font-size: var(--two-depth-ptie-text);
 }
 
+.p-tie > li,
+.p-tie > ul > li {
+  margin-bottom: 10px;
+}
+
+.p-tie > ul > li:last-child {
+  margin-bottom: unset;
+}
+
 /* 3depth */
 .three-depth .skill > strong {
   color: var(--subcolor);
@@ -1098,6 +1107,9 @@ h4 {
 
   .mongze-page2-img {
     left: 24px;
+  }
+  .section3-1::before {
+    background-size: 80% auto;
   }
 }
 
