@@ -1,75 +1,3 @@
-/* const section3 = document.querySelector('.section3');
-const section2 = document.querySelector('.section2');
-const section1 = document.querySelector('.section1');
-const sections = document.querySelectorAll('.section');
-
-let currentSection = 0;
-let scrollStart = 0;
-let isTransitioning = false;
-
-const changeSection = (next) => {
-  if (next >= 0 && next < sections.length && !isTransitioning) {
-    isTransitioning = true;
-
-    sections.forEach((section, index) => {
-      section.style.left = index > next ? '100%' : '-100%';
-      section.style.top = '0';
-
-      // 모든 섹션에서 active-section 클래스 제거
-      section.classList.remove('section2-active');
-    });
-
-    sections[next].style.left = '0';
-    sections[next].style.top = '0';
-
-    // 섹션 2가 활성화될 때만 active-section 클래스 추가
-    if (next === 1) {
-      sections[next].classList.add('section2-active');
-    }
-
-    currentSection = next;
-
-    setTimeout(() => {
-      isTransitioning = false;
-    }, 500);
-  }
-};
-
-if (window.innerWidth >= 1400) {
-  window.addEventListener('wheel', (e) => {
-    if (isTransitioning) return;
-
-    if (currentSection < 2) {
-      if (e.deltaY > 0 && currentSection < sections.length - 1) {
-        changeSection(currentSection + 1);
-      } else if (e.deltaY < 0 && currentSection > 0) {
-        changeSection(currentSection - 1);
-      }
-    } else if (currentSection === 2) {
-      const isScrolledToTop = section3.scrollTop === 0;
-      if (e.deltaY < 0 && isScrolledToTop) {
-        if (scrollStart === 0) {
-          scrollStart = e.timeStamp;
-        } else if (e.timeStamp - scrollStart < 500) {
-          changeSection(currentSection - 1);
-        } else {
-          scrollStart = 0;
-        }
-      }
-    }
-  });
-} else {
-  window.addEventListener('scroll', (e) => {
-    const section2Top = section2.offsetTop;
-    const section3Top = section3.offsetTop;
-
-    if (window.pageYOffset >= section2Top && window.pageYOffset < section3Top) {
-      section2.classList.add('section2-active');
-    } else if (window.pageYOffset < section2Top && window.pageYOffset < section3Top) {
-      section2.classList.remove('section2-active');
-    }
-  });
-} */
 $(document).ready(function () {
   const section2 = $('.section2');
   const section3 = $('.section3');
@@ -143,23 +71,27 @@ $(document).ready(function () {
   /* section3 scroll*/
   /* section3-2 */
   const section3_1Height = $('.section3-1').height();
-
+  const section3_2_one_depth_Height = $('.one-depth').height();
+  const section3_2_two_depth_Height = $('.two-depth').height();
   const skill_box = $('.skill-contents');
   const profile_img = $('.profile-img');
 
-  section3.on('scroll', function () {
-    if ($(this).scrollTop() > ($(this).prop('scrollHeight') - $(this).height()) / 2) {
+  $('.section3').on('scroll', function () {
+    const section3_2_total_height = section3_1Height + section3_2_one_depth_Height + section3_2_two_depth_Height;
+
+    if ($(this).scrollTop() >= section3_2_total_height) {
+      // console.log('특정 스크롤 값에 도달');
       skill_box.css('visibility', 'visible').addClass('active');
       if ($(window).width() >= 1025) {
-        profile_img.css('display', 'block').addClass('active');
+        profile_img.css('visibility', 'visible');
       } else {
-        profile_img.css('display', 'none').removeClass('active');
+        profile_img.css('visibility', 'hidden');
       }
+      profile_img.addClass('active');
     } else {
       skill_box.css('visibility', 'hidden').removeClass('active');
-      profile_img.css('display', 'none').removeClass('active');
+      profile_img.css('visibility', 'hidden').removeClass('active');
     }
-    // console.log($(this).scrollTop() > ($(this).prop('scrollHeight') - $(this).height()) / 2)
   });
 
   /* section3-3 */
@@ -169,9 +101,27 @@ $(document).ready(function () {
 
   section3.on('scroll', function () {
     if ($(this).scrollTop() > totalHeight2) {
-      project_containe.css('display', 'block');
+      project_containe.css('visibility', 'visible').addClass('active');
     } else {
-      project_containe.css('display', 'none');
+      project_containe.css('visibility', 'hidden').removeClass('active');
+    }
+  });
+
+  /* section3-3 */
+  const section3_3Height = $('.section3-3').height();
+  const section3_4Height = $('.section3-4').height();
+  const section3_5_contents = $('.section3-5-contents-text');
+  const section3_5_img = $('.contact-profile-img');
+
+  const totalHeight3 = section3_1Height + section3_2Height + section3_3Height + section3_4Height;
+
+  section3.on('scroll', function () {
+    if ($(this).scrollTop() > totalHeight3) {
+      section3_5_img.fadeIn();
+      section3_5_contents.css('visibility', 'visible').addClass('active');
+    } else {
+      section3_5_img.fadeOut();
+      section3_5_contents.css('visibility', 'hidden').removeClass('active');
     }
   });
 });
